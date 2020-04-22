@@ -5,9 +5,16 @@ const getDataFromApi = () => {
     .then((response) => response.json())
     .then((data) => {
       return data.results.map((character) => {
-        console.log('bu');
+        // console.log(character);
         return {
+          id: character.id,
+          image: character.image,
+          url: character.url,
           name: character.name,
+          specie: character.species,
+          planet: character.origin.name,
+          //   episodes: character.(episode.leght),
+          status: character.status,
         };
       });
     });
