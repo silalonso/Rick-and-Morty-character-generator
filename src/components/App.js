@@ -5,10 +5,10 @@ import Filters from './Filters.js';
 import CharacterDetail from './CharacterDetail';
 import getDataFromApi from '../services/getDataFromApi.js';
 
-function App() {
+const App = () => {
   const [characters, setCharacters] = useState([]);
   useEffect(() => {
-    console.log('me estoy montando');
+    // console.log('me estoy montando');
     getDataFromApi().then((data) => {
       setCharacters(data);
     });
@@ -18,10 +18,10 @@ function App() {
   return (
     <div className='App'>
       <Filters />
-      <CharacterList />
-      <CharacterDetail />
+      <CharacterList characters={characters} />
+      {/* <CharacterDetail /> */}
     </div>
   );
-}
+};
 
 export default App;

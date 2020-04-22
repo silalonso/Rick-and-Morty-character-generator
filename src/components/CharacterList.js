@@ -2,17 +2,17 @@ import React from 'react';
 import '../stylesheets/App.scss';
 import CharacterCard from './CharacterCard.js';
 
-function CharacterList() {
+const CharacterList = (props) => {
+  console.log(props);
+  const characterElement = props.characters.map((character, index) => {
+    console.log(character.id);
+    return <CharacterCard key={character.id} character={character} />;
+  });
   return (
     <section>
-      <ul className='cards'>
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-      </ul>
+      <ul className='cards'>{characterElement}</ul>
     </section>
   );
-}
+};
 
 export default CharacterList;

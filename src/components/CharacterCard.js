@@ -1,16 +1,17 @@
 import React from 'react';
 import '../stylesheets/App.scss';
 
-function CharacterCard() {
+function CharacterCard(props) {
+  console.log(props);
   return (
     <li className='card'>
       <img
         className='card__img'
-        src='http://randomuser.me/api/portraits/women/21.jpg'
-        alt=''
+        src={props.character.image}
+        alt={`Imagen de ${props.character.name}`}
       />
-      <h4 className='card__title'>Julita Mínguez(nombre)</h4>
-      <p className='card__description'>Especie</p>
+      <h4 className='card__title'>{props.character.name}</h4>
+      <p className='card__description'>{props.character.specie}</p>
     </li>
   );
 }
