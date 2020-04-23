@@ -14,10 +14,15 @@ const App = () => {
     });
   }, []);
 
-  console.log(characters);
+  // console.log(characters);
+
+  const handleFilter = (data) => {
+    console.log('están escribiendo algo', data);
+  };
+
   return (
     <div className='App'>
-      <Filters />
+      <Filters handleFilter={handleFilter} />
       <CharacterList characters={characters} />
       {/* <CharacterDetail /> */}
     </div>

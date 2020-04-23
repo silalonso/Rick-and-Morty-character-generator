@@ -2,7 +2,7 @@ import React from 'react';
 import '../stylesheets/App.scss';
 
 function CharacterCard(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <li className='card'>
       <img
