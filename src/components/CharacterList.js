@@ -5,7 +5,6 @@ import CharacterCard from './CharacterCard.js';
 const CharacterList = (props) => {
   console.log(props);
   const characterElement = props.characters.map((character, index) => {
-    // console.log(character.id);
     return <CharacterCard key={character.id} character={character} />;
   });
   return (

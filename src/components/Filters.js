@@ -1,14 +1,12 @@
 import React from 'react';
 
 const Filters = (props) => {
-  // console.log(props);
   const handleChange = (ev) => {
-    // console.log(ev.type);
     props.handleFilter(ev.target.value);
   };
 
   return (
-    <>
+    <form>
       <label className='form__label display-block' htmlFor='name'>
         Busca un personaje:
       </label>
@@ -19,7 +17,7 @@ const Filters = (props) => {
         id='name'
         onChange={handleChange}
       />
-    </>
+    </form>
   );
 };
 

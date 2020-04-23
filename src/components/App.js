@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import '../stylesheets/App.scss';
 import CharacterList from './CharacterList.js';
 import Filters from './Filters.js';
-import CharacterDetail from './CharacterDetail';
+// import CharacterDetail from './CharacterDetail';
 import getDataFromApi from '../services/getDataFromApi.js';
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
+  const [nameFilter, setName] = useState('');
   useEffect(() => {
-    // console.log('me estoy montando');
     getDataFromApi().then((data) => {
       setCharacters(data);
     });
@@ -18,12 +18,19 @@ const App = () => {
 
   const handleFilter = (data) => {
     console.log('están escribiendo algo', data);
+    setName(data);
   };
+
+  const filteredCharacters = characters.filter((character) => {
+    return character.name.toUpperCase().includes(nameFilter.toUpperCase());
+  });
+
+  console.log(filteredCharacters);
 
   return (
     <div className='App'>
       <Filters handleFilter={handleFilter} />
-      <CharacterList characters={characters} />
+      <CharacterList characters={filteredCharacters} />
       {/* <CharacterDetail /> */}
     </div>
   );
