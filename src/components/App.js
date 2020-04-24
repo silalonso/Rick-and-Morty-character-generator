@@ -29,10 +29,14 @@ const App = () => {
   // console.log(filteredCharacters);
 
   const renderCharacterDetail = (props) => {
-    console.log(props);
-    return <CharacterDetail />;
+    const characterName = props.match.params.characterName;
+    // console.log(props.match.params.characterName, characters);
+    const clickedCharacter = characters.find((character) => {
+      return character.name === characterName;
+    });
+    console.log(clickedCharacter);
+    return <CharacterDetail character={clickedCharacter} />;
   };
-
   return (
     <div className='App'>
       <Filters handleFilter={handleFilter} />
