@@ -7,16 +7,10 @@ const Filters = (props) => {
 
   return (
     <form>
-      <label className='form__label display-block' htmlFor='name'>
+      <label className='label' htmlFor='name'>
         Busca un personaje:
       </label>
-      <input
-        className='form__input-text'
-        type='text'
-        name='name'
-        id='name'
-        onChange={handleChange}
-      />
+      <input type='text' name='name' id='name' onChange={handleChange} />
     </form>
   );
 };

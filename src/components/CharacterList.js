@@ -3,7 +3,6 @@ import '../stylesheets/App.scss';
 import CharacterCard from './CharacterCard.js';
 
 const CharacterList = (props) => {
-  // console.log(props);
   const characterElement = props.characters.map((character, index) => {
     return <CharacterCard key={character.id} character={character} />;
   });

@@ -6,6 +6,7 @@ import CharacterList from './CharacterList.js';
 import Filters from './Filters.js';
 import CharacterDetail from './CharacterDetail';
 import getDataFromApi from '../services/getDataFromApi.js';
+import CharacterDoesNotExist from './CharacterDoesNotExist.js';
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -16,10 +17,7 @@ const App = () => {
     });
   }, []);
 
-  // console.log(characters);
-
   const handleFilter = (data) => {
-    console.log('están escribiendo algo', data);
     setName(data);
   };
 
@@ -27,17 +25,19 @@ const App = () => {
     return character.name.toUpperCase().includes(nameFilter.toUpperCase());
   });
 
-  // console.log(filteredCharacters);
-
   const renderCharacterDetail = (props) => {
     const characterName = props.match.params.characterName;
-    // console.log(props.match.params.characterName, characters);
     const clickedCharacter = characters.find((character) => {
       return character.name === characterName;
     });
-    console.log(clickedCharacter);
-    return <CharacterDetail character={clickedCharacter} />;
+
+    if (clickedCharacter !== undefined) {
+      return <CharacterDetail character={clickedCharacter} />;
+    } else {
+      return <CharacterDoesNotExist />;
+    }
   };
+
   return (
     <div className='App'>
       <Header />

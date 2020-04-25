@@ -5,14 +5,13 @@ const getDataFromApi = () => {
     .then((response) => response.json())
     .then((data) => {
       return data.results.map((character) => {
-        // console.log(character);
         return {
           id: character.id,
           image: character.image,
           name: character.name,
           specie: character.species,
           planet: character.origin.name,
-          //   episodes: character.(episode.leght),
+          episodes: character.episode,
           status: character.status,
         };
       });
