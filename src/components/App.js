@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import '../stylesheets/App.scss';
+import Header from './Header.js';
 import CharacterList from './CharacterList.js';
 import Filters from './Filters.js';
 import CharacterDetail from './CharacterDetail';
@@ -39,10 +40,14 @@ const App = () => {
   };
   return (
     <div className='App'>
-      <Filters handleFilter={handleFilter} />
-      <CharacterList characters={filteredCharacters} />
+      <Header />
       <Switch>
+        <Route exact path='/'>
+          <Filters handleFilter={handleFilter} />
+          <CharacterList characters={filteredCharacters} />
+        </Route>
         <Route
+          exact
           path='/character/:characterName'
           render={renderCharacterDetail}
         />
