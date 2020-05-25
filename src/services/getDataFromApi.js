@@ -4,6 +4,7 @@ const getDataFromApi = () => {
   )
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       return data.results.map((character) => {
         return {
           id: character.id,
@@ -13,6 +14,7 @@ const getDataFromApi = () => {
           planet: character.origin.name,
           episodes: character.episode,
           status: character.status,
+          type: character.type,
         };
       });
     });

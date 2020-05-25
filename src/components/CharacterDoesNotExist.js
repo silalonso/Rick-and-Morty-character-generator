@@ -8,7 +8,7 @@ const CharacterDoesNotExist = () => {
       <Link to='/'>
         <button className='btn'>volver al listado</button>
       </Link>
-      <h1>Lo siento, no existe personaje con ese nombre</h1>
+      <h1 className='label'>Lo siento, no existe personaje con ese nombre</h1>
     </div>
   );
 };

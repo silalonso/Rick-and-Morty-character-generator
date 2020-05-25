@@ -11,19 +11,30 @@ import CharacterDoesNotExist from './CharacterDoesNotExist.js';
 const App = () => {
   const [characters, setCharacters] = useState([]);
   const [nameFilter, setName] = useState('');
+  const [typeFilter, setFilter] = useState('');
+
   useEffect(() => {
     getDataFromApi().then((data) => {
       setCharacters(data);
     });
   }, []);
 
-  const handleFilter = (data) => {
-    setName(data);
+  const handleFilter = (data, id) => {
+    if (id === 'name') {
+      setName(data);
+    } else {
+      setFilter(data);
+    }
+    console.log(nameFilter);
   };
 
-  const filteredCharacters = characters.filter((character) => {
-    return character.name.toUpperCase().includes(nameFilter.toUpperCase());
-  });
+  const filteredCharacters = characters
+    .filter((character) => {
+      return character.name.toUpperCase().includes(nameFilter.toUpperCase());
+    })
+    .filter((character) => {
+      return character.type.toUpperCase().includes(typeFilter.toUpperCase());
+    });
 
   const renderCharacterDetail = (props) => {
     const characterName = props.match.params.characterName;

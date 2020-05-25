@@ -2,7 +2,8 @@ import React from 'react';
 
 const Filters = (props) => {
   const handleChange = (ev) => {
-    props.handleFilter(ev.target.value);
+    // console.log(ev.target.id);
+    props.handleFilter(ev.target.value, ev.target.id);
   };
 
   return (
@@ -11,6 +12,11 @@ const Filters = (props) => {
         Busca un personaje:
       </label>
       <input type='text' name='name' id='name' onChange={handleChange} />
+
+      <label className='label' htmlFor='type'>
+        Busca un tipo:
+      </label>
+      <input type='text' name='type' id='type' onChange={handleChange} />
     </form>
   );
 };
