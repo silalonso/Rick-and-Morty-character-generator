@@ -6,7 +6,7 @@ const CharacterDetail = (props) => {
   return (
     <div className='background'>
       <Link to='/'>
-        <button className='btn'>Volver</button>
+        <button className='btn'>Volver al listado</button>
       </Link>
       <div className='cards'>
         <div className='card_detail'>

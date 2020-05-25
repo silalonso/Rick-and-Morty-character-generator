@@ -13,10 +13,10 @@ const Filters = (props) => {
       </label>
       <input type='text' name='name' id='name' onChange={handleChange} />
 
-      <label className='label' htmlFor='type'>
+      {/* <label className='label' htmlFor='type'>
         Busca un tipo:
       </label>
-      <input type='text' name='type' id='type' onChange={handleChange} />
+      <input type='text' name='type' id='type' onChange={handleChange} /> */}
     </form>
   );
 };
