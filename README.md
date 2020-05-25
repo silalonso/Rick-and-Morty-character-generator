@@ -3,7 +3,7 @@
 [![GitHub followers](https://img.shields.io/github/followers/silalonso.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/silalonso?tab=followers)
 [![Twitter](https://img.shields.io/twitter/follow/silvia_coding.svg?style=social&label=@:silvia_coding)](https://twitter.com/silvia_coding)
 
-                       ![Rick and Morty image](https://raw.githubusercontent.com/Adalab/modulo-3-evaluacion-final-silalonso/master/src/images/rym35.jpg)
+![Rick and Morty image](https://raw.githubusercontent.com/Adalab/modulo-3-evaluacion-final-silalonso/master/src/images/rym35.jpg)
 
 # :rocket: Rick and Morty character generator :rocket:
 
